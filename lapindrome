@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include<string.h>
+int main() {
+	int t;
+	scanf("%d",&t);
+	while(t--){
+	    char S;
+	    scanf("%s",&S);
+	    int len;
+	    int left[26]={0};
+	    int right[26]={0};
+	     len=strlen(S);
+
+	for(int i=0;i<len/2;i++){
+	    int index=S[i] -'a';
+	    left[index]++;
+	}
+	for(int i=(len+1)/2;i<len;i++){
+	    int index=S[i] -'a';
+	    right[index]++;
+	}
+	int case=0;
+	for(int i=0;i<26;i++){
+	    if(left[i]!=right[i])
+	      case==1;
+	}
+	if(case==0){
+	    printf("YES\n");
+	}
+	else{
+	    printf("N0\n");
+	}
+
+	}
+}
+
